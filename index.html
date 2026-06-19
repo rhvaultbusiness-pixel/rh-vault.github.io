@@ -250,17 +250,6 @@ searchIcon.onclick = function() {
 style="display:inline-block; padding:12px 20px; background:#ff4444; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
 📧 Payment Screenshot Bhejein
 </a>
-// Simple search - jitne bhi h2, h3, p tags hain unme search karega
-searchBox.onkeyup = function() {
-  let filter = searchBox.value.toLowerCase();
-  let elements = document.querySelectorAll('h1, h2, h3, p, .price-tag-neon');
-  
-  elements.forEach(el => {
-    if(el.innerText.toLowerCase().includes(filter) && filter !== '') {
-      el.style.backgroundColor = '#ffaa0022';
-      el.scrollIntoView({behavior: 'smooth', block: 'center'});
-    } else {
-      el.style.backgroundColor = '';
     }
   });
 }
