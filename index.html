@@ -265,6 +265,82 @@ searchBox.onkeyup = function() {
   });
 }
 </script>
+    <!-- TOP 100+ PREMIUM PNGS PACK PRODUCT - FULL FLOW -->
+<section id="png-pack" class="container card">
+  <!-- Poster Image -->
+  <img src="poster-png-pack.jpg" alt="100+ Premium PNGs Pack" style="width:100%; max-width:400px; border-radius:16px; margin:0 auto 20px auto; display:block; border:2px solid #d4af37;">
+  
+  <h2>TOP 100+ PREMIUM PNGS PACK</h2>
+  <p style="opacity:0.9; line-height:1.6;">100+ High quality transparent PNGs for creators, designers & editors. No background removal needed. Instant download after payment verification.</p>
+  
+  <!-- Price -->
+  <div class="price" style="margin:25px 0;">
+    <span style="text-decoration:line-through; opacity:0.6; font-size:16px;">₹73</span> 
+    <span style="color:#d4af37; font-weight:bold; font-size:24px; margin-left:10px;">33% OFF ₹49 ONLY</span>
+    <p style="font-size:12px; margin-top:6px; opacity:0.7;">LIMITED TIME OFFER</p>
+  </div>
+  
+  <!-- Unlock Button -->
+  <button class="btn" onclick="openPngForm()" style="width:100%; padding:16px; font-size:16px; border-radius:12px; background:linear-gradient(135deg, #d4af37, #ffd700); color:#000; border:none; font-weight:bold; cursor:pointer;">UNLOCK ACCESS NOW</button>
+  
+  <!-- Hidden Form -->
+  <div id="png-form" style="display:none; margin-top:25px; animation:fadeIn 0.3s;">
+    <input type="text" id="png-name" placeholder="Enter Your Full Name" required style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-size:15px;">
+    <input type="email" id="png-email" placeholder="Enter Your Email" required style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-size:15px;">
+    <input type="tel" id="png-phone" placeholder="Enter Phone Number" required style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-size:15px;">
+    
+    <button class="btn" onclick="showPngQR()" style="width:100%; padding:16px; margin-top:12px; font-size:16px; border-radius:12px; background:#d4af37; color:#000; border:none; font-weight:bold; cursor:pointer;">SUBMIT & GET QR</button>
+  </div>
+  
+  <!-- Hidden QR Section -->
+  <div id="png-qr" style="display:none; margin-top:25px; text-align:center; animation:fadeIn 0.3s;">
+    <p style="margin-bottom:15px; font-size:18px; font-weight:bold;">Scan & Pay ₹49</p>
+    <img src="fampay-qr.jpg" alt="UPI QR" style="width:240px; max-width:90%; border-radius:14px; border:3px solid #d4af37; box-shadow:0 0 20px rgba(212,175,55,0.3);">
+    <p style="margin-top:18px; font-size:13px; opacity:0.8;">Complete purchase and send screenshot</p>
+    <button class="btn" onclick="sendPngMail()" style="width:100%; padding:16px; margin-top:12px; font-size:16px; border-radius:12px; background:linear-gradient(135deg, #25D366, #128C7E); color:#fff; border:none; font-weight:bold; cursor:pointer;">SEND SCREENSHOT ON MAIL</button>
+  </div>
+</section>
+
+<style>
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+</style>
+
+<script>
+// PNG Pack Full Flow
+function openPngForm(){
+  document.getElementById('png-form').style.display='block';
+  document.getElementById('png-form').scrollIntoView({behavior:'smooth'});
+}
+
+function showPngQR(){
+  let name = document.getElementById('png-name').value.trim();
+  let email = document.getElementById('png-email').value.trim();
+  let phone = document.getElementById('png-phone').value.trim();
+  
+  if(name=='' || email=='' || phone==''){
+    alert('⚠️ Please fill all details');
+    return;
+  }
+  
+  document.getElementById('png-form').style.display='none';
+  document.getElementById('png-qr').style.display='block';
+  document.getElementById('png-qr').scrollIntoView({behavior:'smooth'});
+}
+
+function sendPngMail(){
+  let name = document.getElementById('png-name').value.trim();
+  let email = document.getElementById('png-email').value.trim();
+  let phone = document.getElementById('png-phone').value.trim();
+  
+  let subject = encodeURIComponent('PNG Pack Payment Screenshot - ' + name);
+  let body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nI have paid ₹49 for Top 100+ Premium PNGs Pack. Please find screenshot attached for verification.\n\nThank you!');
+  
+  window.location.href = 'mailto:rhvault.business@gmail.com?subject=' + subject + '&body=' + body;
+}
+</script>
 </body>
 </html><!DOCTYPE html>
 <html lang="en">
