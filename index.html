@@ -354,26 +354,25 @@ function sendPngMail(){
   display: block !important;
   border-radius: 16px;
 }
-
-/* Mobile me thoda chota */
-@media (max-width: 768px) {
-  .container .card img, .card img, section img {
-    max-width: 280px !important;
-  }
+<style>
+/* Sirf PNG Pack wala image chota karega */
+#png-pack img {
+  width: auto !important;
+  max-width: 280px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto !important;
+  display: block !important;
+  border: 2px solid #d4af37;
+  border-radius: 16px;
 }
 
-/* Navbar mobile fix bhi isi me */
-@media (max-width: 768px) {
-  nav, .navbar, header, #menu {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 12px !important;
-  }
-  .fa-search, .fa-ellipsis-v, .search-icon, .menu-icon {
-    display: none !important;
+/* Mobile me aur chota */
+@media (max-width: 480px) {
+  #png-pack img {
+    max-width: 240px !important;
   }
 }
-    </style>
+</style>
 <head>
     <style>
 
